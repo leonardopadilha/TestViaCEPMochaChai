@@ -1,0 +1,197 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-11-03T22:37:27.353Z",
+    "end": "2021-11-03T22:37:28.670Z",
+    "duration": 1317,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "af55f4e9-4b3f-4e51-8065-bfba9ff76136",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0f202bcc-b77a-4daa-860e-c7949fdd10a1",
+          "title": "Buscar CEP",
+          "fullFile": "/home/leonardor/Documentos/Cursos/Teste APIs com Postman, JAVA, RestAssured, Junit5 e Gradle/mocha/viaCep/test/testGetCep.spec.js",
+          "file": "/test/testGetCep.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "88fb01af-1a6b-45a8-a7c1-60bc9ab09f46",
+              "title": "quando informo um cep válido",
+              "fullFile": "/home/leonardor/Documentos/Cursos/Teste APIs com Postman, JAVA, RestAssured, Junit5 e Gradle/mocha/viaCep/test/testGetCep.spec.js",
+              "file": "/test/testGetCep.spec.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "então os dados do endereço devem ser retornados corretamente",
+                  "fullTitle": "Buscar CEP quando informo um cep válido então os dados do endereço devem ser retornados corretamente",
+                  "timedOut": false,
+                  "duration": 458,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "request.get('01001000/json/').end(function (err, res) {\n    expect(res).to.has.status(200);\n    expect(res.body).to.property('cep');\n    expect(res.body).to.property('logradouro');\n    expect(res.body).to.property('complemento');\n    expect(res.body).to.property('bairro');\n    expect(res.body).to.property('localidade');\n    expect(res.body).to.property('uf');\n    expect(res.body).to.property('ibge');\n    expect(res.body).to.property('gia');\n    expect(res.body).to.property('ddd');\n    expect(res.body).to.property('siafi');\n    expect(res.body.cep).to.contains('01001');\n    expect(res.body.bairro).to.be.an('string');\n    expect(res.body).to.not.be.an('array');\n    done();\n});",
+                  "err": {},
+                  "uuid": "08976610-bfc6-447a-824d-cba314233cbd",
+                  "parentUUID": "88fb01af-1a6b-45a8-a7c1-60bc9ab09f46",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "08976610-bfc6-447a-824d-cba314233cbd"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 458,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 10000
+            },
+            {
+              "uuid": "72dc1f51-8039-4cb7-ab1d-4bcc6b8e0e0c",
+              "title": "quando informo um cep inexistente",
+              "fullFile": "/home/leonardor/Documentos/Cursos/Teste APIs com Postman, JAVA, RestAssured, Junit5 e Gradle/mocha/viaCep/test/testGetCep.spec.js",
+              "file": "/test/testGetCep.spec.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "então deve ser retornado que houve um erro",
+                  "fullTitle": "Buscar CEP quando informo um cep inexistente então deve ser retornado que houve um erro",
+                  "timedOut": false,
+                  "duration": 419,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "request.get('33490268/json/').end(function (err, res) {\n    expect(res).to.has.status(200);\n    expect(res.body.erro).to.equals(true);\n    done();\n});",
+                  "err": {},
+                  "uuid": "057c60f8-086e-430a-aaa5-9198c188eab9",
+                  "parentUUID": "72dc1f51-8039-4cb7-ab1d-4bcc6b8e0e0c",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "057c60f8-086e-430a-aaa5-9198c188eab9"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 419,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 10000
+            },
+            {
+              "uuid": "869cfae2-cbb6-42b9-9a22-e3b60892132d",
+              "title": "quando informo um cep inválido",
+              "fullFile": "/home/leonardor/Documentos/Cursos/Teste APIs com Postman, JAVA, RestAssured, Junit5 e Gradle/mocha/viaCep/test/testGetCep.spec.js",
+              "file": "/test/testGetCep.spec.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "então não devem ser retornados dados do endereço",
+                  "fullTitle": "Buscar CEP quando informo um cep inválido então não devem ser retornados dados do endereço",
+                  "timedOut": false,
+                  "duration": 422,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "request.get('1111111/json/').end(function (err, res) {\n    expect(res).to.has.status(400);\n    expect(res).to.be.html;\n    done();\n});",
+                  "err": {},
+                  "uuid": "c19f0c1d-5545-48cc-975b-82f2177b286c",
+                  "parentUUID": "869cfae2-cbb6-42b9-9a22-e3b60892132d",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "c19f0c1d-5545-48cc-975b-82f2177b286c"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 422,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 10000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 10000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 10000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.1.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.2.0"
+    }
+  }
+}
